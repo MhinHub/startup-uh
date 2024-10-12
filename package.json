@@ -40,6 +40,11 @@
   "dependencies": {
     "@clerk/nextjs": "^5.4.1",
     "@clerk/themes": "^2.1.27",
+    "@schedule-x/drag-and-drop": "^2.4.1",
+    "@schedule-x/event-modal": "^2.4.1",
+    "@schedule-x/events-service": "^2.4.1",
+    "@schedule-x/react": "^2.4.1",
+    "@schedule-x/theme-default": "^2.4.1",
     "autoprefixer": "latest",
     "daisyui": "latest",
     "iconsax-react": "latest",

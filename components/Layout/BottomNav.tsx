@@ -49,7 +49,11 @@ const BottomNav: FC = () => {
             path="/agenda"
             isActive={isActive('/agenda')}
           />
-          <NavItem icon={<People size={30} variant="Linear" />} path="/ruang" />
+          <NavItem
+            icon={<People size={30} variant="Linear" />}
+            path="/ruang"
+            isActive={isActive('/ruang')}
+          />
           <NavItem
             icon={<Profile size={30} variant="Linear" />}
             path="/profile"

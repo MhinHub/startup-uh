@@ -7,7 +7,7 @@ const Ruang = () => {
       <section className="min-h-svh py-5 w-full">
         <div className="flex flex-col items-start justify-center box-light-gray w-full h-fit rounded-[30px] p-4">
           <div className="flex items-center w-full gap-2 mb-2">
-            <Messages2 size="40" color="#d9e3f0" />
+            <Messages2 size="35" color="#d9e3f0" />
             <div className="flex flex-col items-start">
               <p className="font-bold text-gray-50 text-lg text-start whitespace-nowrap">
                 Discussion Group

@@ -18,7 +18,7 @@ const EventItem: FC = () => (
 );
 
 const TopIdeabox: FC = () => (
-  <div className="flex flex-col gap-4 w-full my-6">
+  <div className="flex flex-col gap-4 w-full my-6 overflow-hidden">
     <p className="text-gray-50 font-extrabold text-lg px-2">Top Ideabox</p>
     <div className="flex flex-nowrap overflow-x-scroll gap-4 w-[90vw]">
       <EventItem />

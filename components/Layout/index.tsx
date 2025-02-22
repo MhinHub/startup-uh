@@ -8,6 +8,7 @@ type LayoutProps = {
   children: React.ReactNode;
   description?: string;
   isBottomNav?: boolean;
+  className?: string;
 };
 
 const Layout: FC<LayoutProps> = ({
@@ -15,18 +16,19 @@ const Layout: FC<LayoutProps> = ({
   children,
   description = 'Aplikasi Startup Unhas',
   isBottomNav = true,
+  className
 }) => {
   return (
-    <>
+    <div className={`bg-[#0b0c0e] min-h-svh lg:rounded-3xl ${className}`}>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
-      <main className="px-[5vw]">
+      <main className="px-[4vw]">
         {children} <Modal />
       </main>
       {isBottomNav && <BottomNav />}
-    </>
+    </div>
   );
 };
 

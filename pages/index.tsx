@@ -9,13 +9,15 @@ import {
 } from 'components/Home';
 
 const Home: NextPage = () => (
-  <Layout title="Startup Unhas" isBottomNav>
-    <Header />
-    <DasborKegiatan />
-    <MenuCepat />
-    <TopEvent />
-    <TopIdeabox />
-  </Layout>
+  <div className="flex flex-col justify-center lg:px-[33vw]">
+    <Layout title="Startup Unhas" isBottomNav>
+      <Header />
+      <DasborKegiatan />
+      <MenuCepat />
+      <TopEvent />
+      <TopIdeabox />
+    </Layout>
+  </div>
 );
 
 export default Home;

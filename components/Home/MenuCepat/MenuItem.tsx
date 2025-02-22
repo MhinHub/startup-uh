@@ -17,8 +17,8 @@ const MenuItem: FC<MenuItemProps> = ({
     href={text.toLowerCase()}
     className="grid place-items-center gap-1 group/glow"
   >
-    <MenuIcon src={src} className={className} />
-    <p className="text-gray-50 text-xs text-center font-semibold">{text}</p>
+      <MenuIcon src={src} className={className} />
+      <p className="text-gray-50 text-xs text-center font-semibold">{text}</p>
   </Link>
 );
 

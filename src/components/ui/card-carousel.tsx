@@ -29,6 +29,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
   .swiper {
     width: 100%;
     padding-bottom: 50px;
+    overflow: visible;
   }
   
   .swiper-slide {
@@ -53,7 +54,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
   }
   `
   return (
-    <section className="w-ace-y-4">
+    <section className="w-ace-y-4 overflow-visible">
       <style>{css}</style>
       <div className="mx-auto w-full max-w-6xl rounded-[24px] border border-black/5 p-2 shadow-sm md:rounded-t-[44px]">
         {/* <div className="relative mx-auto flex w-full flex-col rounded-[24px] border border-black/5 bg-neutral-800/5 p-2 shadow-sm md:items-start md:gap-8 md:rounded-b-[20px] md:rounded-t-[40px] md:p-2"> */}

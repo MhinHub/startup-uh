@@ -8,6 +8,6 @@
 	"configFiles": {},
 	"paths": {
 		"*": "./src/blocks",
-		"Components": "./src/components"
+		"Components": "./src/components/ui"
 	}
 }

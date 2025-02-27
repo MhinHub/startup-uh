@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout';
-import { Whatsapp, Messages2 } from 'iconsax-react';
+import { Messages2 } from 'iconsax-react';
 
 const Ruang = () => {
   return (

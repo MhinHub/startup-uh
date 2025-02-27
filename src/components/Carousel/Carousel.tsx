@@ -1,12 +1,11 @@
 /*
-	jsrepo 1.41.0
-	Installed from https://reactbits.dev/ts/tailwind/
-	2-26-2025
+  jsrepo 1.41.0
+  Installed from https://reactbits.dev/ts/tailwind/
+  2-26-2025
 */
 
 import { useEffect, useState, useRef } from "react";
 import { motion, PanInfo, useMotionValue, useTransform } from "framer-motion";
-// replace icons with your own if needed
 import {
   FiCircle,
   FiCode,
@@ -102,6 +101,7 @@ export default function Carousel({
         container.removeEventListener("mouseleave", handleMouseLeave);
       };
     }
+    return undefined;
   }, [pauseOnHover]);
 
   useEffect(() => {
@@ -119,6 +119,7 @@ export default function Carousel({
       }, autoplayDelay);
       return () => clearInterval(timer);
     }
+    return undefined;
   }, [
     autoplay,
     autoplayDelay,
@@ -164,20 +165,19 @@ export default function Carousel({
   const dragProps = loop
     ? {}
     : {
-        dragConstraints: {
-          left: -trackItemOffset * (carouselItems.length - 1),
-          right: 0,
-        },
-      };
+      dragConstraints: {
+        left: -trackItemOffset * (carouselItems.length - 1),
+        right: 0,
+      },
+    };
 
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden p-4 ${
-        round
-          ? "rounded-full border border-white"
-          : "rounded-[24px] border border-[#222]"
-      }`}
+      className={`relative overflow-hidden p-4 ${round
+        ? "rounded-full border border-white"
+        : "rounded-[24px] border border-[#222]"
+        }`}
       style={{
         width: `${baseWidth}px`,
         ...(round && { height: `${baseWidth}px` }),
@@ -210,11 +210,10 @@ export default function Carousel({
           return (
             <motion.div
               key={index}
-              className={`relative shrink-0 flex flex-col ${
-                round
-                  ? "items-center justify-center text-center bg-[#060606] border-0"
-                  : "items-start justify-between bg-[#222] border border-[#222] rounded-[12px]"
-              } overflow-hidden cursor-grab active:cursor-grabbing`}
+              className={`relative shrink-0 flex flex-col ${round
+                ? "items-center justify-center text-center bg-[#060606] border-0"
+                : "items-start justify-between bg-[#222] border border-[#222] rounded-[12px]"
+                } overflow-hidden cursor-grab active:cursor-grabbing`}
               style={{
                 width: itemWidth,
                 height: round ? itemWidth : "100%",
@@ -239,23 +238,21 @@ export default function Carousel({
         })}
       </motion.div>
       <div
-        className={`flex w-full justify-center ${
-          round ? "absolute z-20 bottom-12 left-1/2 -translate-x-1/2" : ""
-        }`}
+        className={`flex w-full justify-center ${round ? "absolute z-20 bottom-12 left-1/2 -translate-x-1/2" : ""
+          }`}
       >
         <div className="mt-4 flex w-[150px] justify-between px-8">
           {items.map((_, index) => (
             <motion.div
               key={index}
-              className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${
-                currentIndex % items.length === index
-                  ? round
-                    ? "bg-white"
-                    : "bg-[#333333]"
-                  : round
-                    ? "bg-[#555]"
-                    : "bg-[rgba(51,51,51,0.4)]"
-              }`}
+              className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${currentIndex % items.length === index
+                ? round
+                  ? "bg-white"
+                  : "bg-[#333333]"
+                : round
+                  ? "bg-[#555]"
+                  : "bg-[rgba(51,51,51,0.4)]"
+                }`}
               animate={{
                 scale: currentIndex % items.length === index ? 1.2 : 1,
               }}

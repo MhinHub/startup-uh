@@ -1,26 +1,23 @@
 import { type FC } from 'react';
-import Image from 'next/image';
-import { BackgroundGradient } from '@/components/ui/background-gradient';
-import { CardCarousel } from '@/components/ui/card-carousel';
+// import Image from 'next/image';
 import { CardSwipe } from '@/components/ui/card-swipe';
-import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { Lamp, LampCharge } from 'iconsax-react';
+import { LampCharge } from 'iconsax-react';
 
-const EventItem: FC = () => (
-  <div className="flex-shrink-0 relative w-72 h-40 inv-rad inv-rad-t-l-6 overflow-visible">
-    <div className="absolute box-light-gray rounded-[30px] " />
-    <div className="flex z-10">
-      <Image
-        className="absolute inset-0 m-auto h-auto rounded-3xl px-2"
-        src="/assets/topEvent/event-startupuh.png"
-        width={288}
-        height={160}
-        alt="Top Ideabox"
-        priority
-      />
-    </div>
-  </div>
-);
+// const EventItem: FC = () => (
+//   <div className="flex-shrink-0 relative w-72 h-40 inv-rad inv-rad-t-l-6 overflow-visible">
+//     <div className="absolute box-light-gray rounded-[30px] " />
+//     <div className="flex z-10">
+//       <Image
+//         className="absolute inset-0 m-auto h-auto rounded-3xl px-2"
+//         src="/assets/topEvent/event-startupuh.png"
+//         width={288}
+//         height={160}
+//         alt="Top Ideabox"
+//         priority
+//       />
+//     </div>
+//   </div>
+// );
 
 const TopIdeabox: FC = () => (
   <div className="flex flex-col gap-4 w-full my-6 overflow-visible">

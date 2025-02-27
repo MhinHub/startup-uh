@@ -45,11 +45,17 @@ export default function Document() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Startup UH" />
         <meta property="og:site_name" content="Startup UH" />
+        <meta property="og:description" content="Startup UH adalah platform yang menyediakan informasi seputar startup di Universitas Hasanuddin." />
+        <meta property="og:locale" content="id_ID" />
         <meta property="og:url" content="https://startup-uh.vercel.app" />
         <meta property="og:image" content="icons/icon-192x192.png" />
         <meta property="og:image:alt" content="Startup UH" />
 
         <meta name="author" content="#BuildAppWithMin" />
+        <script defer src="https://cloud.umami.is/script.js" data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ''}></script>
+        <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ''} />
+        <meta name="description" content="Startup UH adalah platform yang menyediakan informasi seputar startup di Universitas Hasanuddin." />
+        <meta name="keywords" content="startup, universitas hasanuddin, startup uh, startup hasanuddin, startup unhas, startup makassar, startup sulawesi selatan" />
       </Head>
       <body>
         <Main />

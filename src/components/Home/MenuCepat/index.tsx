@@ -1,44 +1,47 @@
 import { type FC } from 'react';
 import MenuItem from './MenuItem';
+import { Calendar2, Category, Convertshape, LampOn, MenuBoard } from 'iconsax-react';
+import { Rocket } from 'lucide-react';
 
 const MenuCepat: FC = () => (
   <div className="flex flex-col gap-4 w-full my-6">
     <p className="text-gray-50 font-extrabold text-lg px-2">Menu Cepat</p>
     <div className="grid place-items-center grid-cols-4 gap-4">
       <MenuItem
-        src="/assets/menuCepat/ic-pengumuman.png"
+        icon={<MenuBoard size="32" color="#d9e3f0" />}
+        color='blue'
         text="Pengumuman"
-        className="bg-yellow-400"
       />
       <MenuItem
-        src="/assets/menuCepat/ic-event.png"
+        icon={<Calendar2 size="32" color="#d9e3f0" />}
+        color="green"
         text="Event"
-        className="bg-green-400"
       />
       <MenuItem
-        src="/assets/menuCepat/ic-program.png"
+        icon={<Category size="32" color="#d9e3f0" />}
+        color="indigo"
         text="Program"
-        className="bg-cyan-400"
       />
       <MenuItem
-        src="/assets/menuCepat/ic-match.png"
+        icon={<Convertshape size="32" color="#d9e3f0" />}
+        color="orange"
         text="Match"
-        className="bg-blue-400"
       />
       <MenuItem
-        src="/assets/menuCepat/ic-startup.png"
+        icon={<Rocket widths={32} color="#d9e3f0" />}
+        color="red"
         text="Startup"
-        className="bg-purple-400"
       />
-      <MenuItem
-        src="/assets/menuCepat/ic-akselerasi.png"
+      {/* <MenuItem
+        icon={<Calendar2 size="32" color="#d9e3f0" />}
+        color="purple"
         text="Akselerasi"
         className="bg-red-400"
-      />
+      /> */}
       <MenuItem
-        src="/assets/menuCepat/ic-ideabox.png"
+        icon={<LampOn size="32" color="#d9e3f0" />}
+        color="purple"
         text="Ideabox"
-        className="bg-orange-400"
       />
     </div>
   </div>

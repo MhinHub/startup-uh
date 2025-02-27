@@ -1,24 +1,26 @@
-import { type FC } from 'react';
-import MenuIcon from './MenuIcon';
+import React, { type FC } from 'react';
 import Link from 'next/link';
+import GlassIcons, { type ColorOption } from '@/components/ui/GlassIcons';
 
 type MenuItemProps = {
-  src: string;
+  icon: React.ReactElement;
+  color: ColorOption;
   text: string;
   className?: string;
 };
 
 const MenuItem: FC<MenuItemProps> = ({
-  src = '',
+  icon,
+  color,
   text = '',
-  className = 'bg-gray-50',
+  className,
 }) => (
   <Link
     href={text.toLowerCase()}
     className="grid place-items-center gap-1 group/glow"
   >
-      <MenuIcon src={src} className={className} />
-      <p className="text-gray-50 text-xs text-center font-semibold">{text}</p>
+    <GlassIcons items={[{ icon: icon, label: text, customClass: className, color: color }]} />
+    <p className="text-gray-50 text-xs text-center font-semibold">{text}</p>
   </Link>
 );
 

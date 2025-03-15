@@ -49,6 +49,7 @@
     "@schedule-x/react": "^2.4.1",
     "@schedule-x/theme-default": "^2.4.1",
     "@tailwindcss/postcss": "^4.0.8",
+    "axios": "^1.8.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "daisyui": "latest",
@@ -70,18 +71,19 @@
     "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.3",
-    "tailwindcss": "3",
+    "@faker-js/faker": "^9.6.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "autoprefixer": "^10.4.20",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "latest",
     "lint-staged": "latest",
     "pinst": "latest",
+    "postcss": "^8.5.3",
     "prettier": "latest",
+    "tailwindcss": "3",
     "typescript": "latest"
   }
 }

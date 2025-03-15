@@ -3,7 +3,7 @@ import { Timer1, Clock, Location } from 'iconsax-react';
 
 const Row1: FC = () => (
   <div className="relative z-10 w-9/12 px-3 py-2">
-    <div className="absolute inset-0 bg-[#1B1B1B] backdrop-filter backdrop-blur-lg bg-opacity-80 rounded-[25px] h-full" />
+    <div className="absolute inset-0 bg-[#030303] backdrop-filter backdrop-blur-lg bg-opacity-80 rounded-[25px] h-full" />
     <div className="relative z-20">
       <div className="flex justify-start items-center">
         <div className="relative h-7 w-7">
@@ -17,7 +17,14 @@ const Row1: FC = () => (
         </div>
         <div className="flex flex-col mx-3">
           <p className="text-white text-sm font-bold">Hari ini</p>
-          <p className="text-white text-xs">Minggu, 12 Juli 2020</p>
+          <p className="text-white text-xs">
+            {new Date().toLocaleDateString('id-ID', {
+              weekday: 'long',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </p>
         </div>
       </div>
       <div>

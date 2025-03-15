@@ -34,13 +34,13 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className, showedText })
   };
 
   return (
-    <div className={`grid gap-[1em] grid-cols-2 md:grid-cols-3 mx-auto py-[1em] overflow-visible ${className || ""}`}>
+    <div className={`grid place-content-center gap-[0.5em] grid-cols-2 md:grid-cols-3 mx-auto py-[1em] overflow-visible ${className || ""}`}>
       {items.map((item, index) => (
         <button
           key={index}
           type="button"
           aria-label={item.label}
-          className={`relative bg-transparent outline-none w-[4.5em] h-[4.5em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${item.customClass || ""}`}
+          className={`relative bg-transparent outline-none size-[4em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${item.customClass || ""}`}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >

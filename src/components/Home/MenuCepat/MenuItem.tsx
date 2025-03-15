@@ -17,7 +17,7 @@ const MenuItem: FC<MenuItemProps> = ({
 }) => (
   <Link
     href={text.toLowerCase()}
-    className="grid place-items-center gap-1 group/glow"
+    className="grid place-content-center gap-1 group/glow"
   >
     <GlassIcons items={[{ icon: icon, label: text, customClass: className, color: color }]} />
     <p className="text-gray-50 text-xs text-center font-semibold">{text}</p>

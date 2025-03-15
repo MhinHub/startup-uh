@@ -1,11 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-
 const svgToDataUri = require("mini-svg-data-uri");
-
 const colors = require("tailwindcss/colors");
-const {
-	default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -38,11 +34,14 @@ module.exports = {
 		}
 	},
 	variants: {
-		extend: {},
+		extend: {
+			backdropFilter: ['responsive'],
+		},
 	},
 	plugins: [
 		require('daisyui'),
 		require('@butterfail/tailwindcss-inverted-radius'),
+		require('tailwindcss-filters'),
 		addVariablesForColors,
 		function ({ matchUtilities, theme }) {
 			matchUtilities(

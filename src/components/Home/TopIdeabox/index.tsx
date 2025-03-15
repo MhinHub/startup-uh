@@ -27,7 +27,7 @@ const TopIdeabox: FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 w-full my-6 overflow-visible">
+    <div className="flex flex-col mx-auto gap-4 w-full my-6 overflow-visible max-w-xs">
       {isLoading ? (
         <p className="text-gray-50 text-center">Loading...</p>
       ) : (

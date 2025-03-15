@@ -10,6 +10,7 @@ import { fakerID_ID as faker } from '@faker-js/faker';
 
 const TopEvent: FC = () => {
   const [imageUrls, setImageUrls] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -29,6 +30,8 @@ const TopEvent: FC = () => {
         setImageUrls(urls);
       } catch (error) {
         console.error('Error fetching images:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -37,26 +40,32 @@ const TopEvent: FC = () => {
 
   return (
     <div className="flex flex-col gap-4 w-full my-6 relative">
-      <p className="text-gray-50 font-extrabold text-lg px-2">Top Event</p>
-      <CardCarousel
-        listChildren={imageUrls.map((url, index) => (
-          <MinimalCard className="m-2 w-72" key={index}>
-            <MinimalCardImage
-              className="h-[10rem] object-cover object-center"
-              src={url}
-              alt={faker.lorem.sentence()}
-            />
-            <MinimalCardTitle className='line-clamp-2'>{faker.lorem.sentence()}
-            </MinimalCardTitle>
-            <MinimalCardDescription className='line-clamp-3'>
-              {faker.lorem.paragraph()}
-            </MinimalCardDescription>
-          </MinimalCard>
-        ))}
-        autoplayDelay={3000}
-        showPagination={true}
-        showNavigation={true}
-      />
+      {isLoading ? (
+        <p className="text-gray-50 text-center">Loading...</p>
+      ) : (
+        <>
+          <p className="text-gray-50 font-extrabold text-lg px-2">Top Event</p>
+          <CardCarousel
+            listChildren={imageUrls.map((url, index) => (
+              <MinimalCard className="m-2 w-72" key={index}>
+                <MinimalCardImage
+                  className="h-[10rem] object-cover object-center"
+                  src={url}
+                  alt={faker.lorem.sentence()}
+                />
+                <MinimalCardTitle className='line-clamp-2'>{faker.lorem.sentence()}
+                </MinimalCardTitle>
+                <MinimalCardDescription className='line-clamp-3'>
+                  {faker.lorem.paragraph()}
+                </MinimalCardDescription>
+              </MinimalCard>
+            ))}
+            autoplayDelay={3000}
+            showPagination={true}
+            showNavigation={true}
+          />
+        </>
+      )}
     </div>
   );
 }

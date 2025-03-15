@@ -8,12 +8,16 @@ import {
 import { CardCarousel } from '@/components/ui/card-carousel';
 import { fakerID_ID as faker } from '@faker-js/faker';
 
-const TopEvent: FC = () => {
+interface TopEventProps {
+  setLoading: (isLoading: boolean) => void;
+}
+
+const TopEvent: FC<TopEventProps> = ({ setLoading }) => {
   const [imageUrls, setImageUrls] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchImages = async () => {
+      setLoading(true);
       try {
         const urls = await Promise.all(
           Array.from({ length: 5 }).map(async () => {
@@ -31,16 +35,16 @@ const TopEvent: FC = () => {
       } catch (error) {
         console.error('Error fetching images:', error);
       } finally {
-        setIsLoading(false);
+        setLoading(false);
       }
     };
 
     fetchImages();
-  }, []);
+  }, [setLoading]);
 
   return (
     <div className="flex flex-col gap-4 w-full my-6 relative">
-      {isLoading ? (
+      {imageUrls.length === 0 ? (
         <p className="text-gray-50 text-center">Loading...</p>
       ) : (
         <>
@@ -49,7 +53,7 @@ const TopEvent: FC = () => {
             listChildren={imageUrls.map((url, index) => (
               <MinimalCard className="m-2 w-72" key={index}>
                 <MinimalCardImage
-                  className="h-[10rem] object-cover object-center"
+                  className="h-40 w-full aspect-video object-cover object-center"
                   src={url}
                   alt={faker.lorem.sentence()}
                 />
